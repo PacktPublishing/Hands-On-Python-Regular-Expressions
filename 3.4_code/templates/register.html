@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/app.css">
+
+    <title>User Registration app</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>User Registration</h1>
+      {% if error %}
+      <div class="alert alert-primary">
+        Please check the form for errors
+      </div>
+      {% endif %}
+      <form method="POST">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name"
+                   name="first_name" 
+                   placeholder="First Name"
+
+                   {% if error %}
+                      value="{{ error.first_name.val }}"
+                      {% if error.first_name.ok %}
+                        class="form-control is-valid" 
+                      {% else %}
+                        class="form-control is-invalid" 
+                      {% endif %}
+                   {% else %}
+                      value=""
+                      class="form-control"
+                   {% endif %}
+
+                   />
+          </div>
+          
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name"
+                   name="last_name" 
+                   placeholder="Last Name"
+
+                   {% if error %}
+                      value="{{ error.last_name.val }}"
+                      {% if error.last_name.ok %}
+                        class="form-control is-valid" 
+                      {% else %}
+                        class="form-control is-invalid" 
+                      {% endif %}
+                   {% else %}
+                      value=""
+                      class="form-control"
+                   {% endif %}
+
+                   />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" id="email" name="email" 
+                   placeholder="Enter email"
+
+                   {% if error %}
+                      value="{{ error.email.val }}"
+                      {% if error.email.ok %}
+                        class="form-control is-valid" 
+                      {% else %}
+                        class="form-control is-invalid" 
+                      {% endif %}
+                   {% else %}
+                      value=""
+                      class="form-control"
+                   {% endif %}
+
+                   />
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" 
+                   name="password" placeholder="Password"
+
+                   {% if error %}
+                      value="{{ error.password.val }}"
+                      {% if error.password.ok %}
+                        class="form-control is-valid" 
+                      {% else %}
+                        class="form-control is-invalid" 
+                      {% endif %}
+                   {% else %}
+                      value=""
+                      class="form-control"
+                   {% endif %}
+
+                   />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+  </body>
+</html>

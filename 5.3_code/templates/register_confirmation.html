@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/app.css">
+
+    <title>User Registration app</title>
+  </head>
+  <body>
+    <div id="root">
+      <h1>User Registration</h1>
+      <p>
+      Thanks for registering!
+      </p>
+
+      <p>We have on record:</p>
+      <ul>
+        <li>Name: {{ user_data.full_name }}</li>
+        <li>Email: {{ user_data.email }}</li>
+        <li>Email Domain: {{ user_data.email_domain }}</li>
+        <li>LinkedIn User: {{ user_data.linkedin_username }}</li>
+      </ul>
+    </div>
+  </body>
+</html>
